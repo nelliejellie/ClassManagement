@@ -87,12 +87,12 @@ namespace ClassManagement.Api.Controllers
                 if (!ModelState.IsValid)
                     throw new InvalidOperationException();
                 var checkAge = Utils.IsOver22(studentRequestDto.DOB);
-                if (checkAge == false)
+                if (checkAge == true)
                 {
                     return BadRequest(new ApiResponse
                     {
                         Success = false,
-                        Message = "this teacher is underage"
+                        Message = "this student is overaged"
                     });
                 }
                 var newTeacher = CustomMappers.CreateNewStudent(studentRequestDto);
