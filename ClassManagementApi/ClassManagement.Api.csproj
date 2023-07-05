@@ -24,4 +24,9 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClassManagement.Data\ClassManagement.Data.csproj" />
+    <ProjectReference Include="..\Classmanagement.Repository\Classmanagement.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

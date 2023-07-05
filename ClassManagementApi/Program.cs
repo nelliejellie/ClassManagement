@@ -21,6 +21,9 @@ namespace ClassManagementApi
             // repository config
             builder.AddRepoConfig();
 
+            // add cors config
+            var MyAllowAnyOrigin = "_myAllowAnyOrigin";
+            builder.AddCorsConfiguration(MyAllowAnyOrigin);
 
             var app = builder.Build();
 
@@ -37,7 +40,7 @@ namespace ClassManagementApi
 
 
             app.MapControllers();
-
+            app.UseCors(MyAllowAnyOrigin);
             app.Run();
         }
     }

@@ -64,16 +64,34 @@ namespace Classmanagement.Repository.Repositories
 
         public async Task<T> GetById(Guid id)
         {
-            var entity = await _table.SingleOrDefaultAsync(x => x.Id == id);
-            return entity;
+            try
+            {
+                var entity = await _table.SingleOrDefaultAsync(x => x.Id == id);
+                return entity;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public async Task<T> Update(Guid id, JsonPatchDocument patchDocument)
         {
-            var entity = await _table.AsQueryable().Where(x => x.Id == id).SingleOrDefaultAsync();
-            patchDocument.ApplyTo(entity);
-            await _context.SaveChangesAsync();
-            return entity;
+            try
+            {
+                var entity = await _table.AsQueryable().Where(x => x.Id == id).SingleOrDefaultAsync();
+                patchDocument.ApplyTo(entity);
+                await _context.SaveChangesAsync();
+                return entity;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
 
