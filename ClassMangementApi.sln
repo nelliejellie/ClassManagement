@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassManagement.Api", "Clas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassManagement.Tests", "ClassManagement.Tests\ClassManagement.Tests.csproj", "{4735D1FF-477C-410D-8ACE-7D102FD58115}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classmanagement.Repository", "Classmanagement.Repository\Classmanagement.Repository.csproj", "{982853B4-098A-4079-A16C-C208118DBB5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4735D1FF-477C-410D-8ACE-7D102FD58115}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4735D1FF-477C-410D-8ACE-7D102FD58115}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4735D1FF-477C-410D-8ACE-7D102FD58115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{982853B4-098A-4079-A16C-C208118DBB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{982853B4-098A-4079-A16C-C208118DBB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{982853B4-098A-4079-A16C-C208118DBB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{982853B4-098A-4079-A16C-C208118DBB5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
