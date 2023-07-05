@@ -1,7 +1,8 @@
 ﻿using Classmanagement.Repository.Interfaces;
+using Classmanagement.Repository.Repositories;
 using ClassManagement.Api.DTOs;
+using ClassManagement.Api.DTOs.Students.RequestDto;
 using ClassManagement.Api.DTOs.Teachers.RequestDto;
-using ClassManagement.Api.Entities;
 using ClassManagement.Api.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,24 +11,24 @@ namespace ClassManagement.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TeacherController : ControllerBase
+    public class StudentController : ControllerBase
     {
-        private readonly ITeacherRepository _teacherRepository;
+        private readonly IStudentRepository _studentRepository;
 
-        public TeacherController(ITeacherRepository teacherRepository)
+        public StudentController(IStudentRepository studentRepository)
         {
-            _teacherRepository = teacherRepository;
+            _studentRepository = studentRepository;
         }
 
         [HttpGet]
         [Route("")]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetTeachers()
+        public async Task<IActionResult> GetStudents()
         {
             try
             {
-                var teachers = await _teacherRepository.GetAll();
+                var teachers = await _studentRepository.GetAll();
                 return Ok(new ApiResponse
                 {
                     Message = "successful",
@@ -46,15 +47,16 @@ namespace ClassManagement.Api.Controllers
             }
         }
 
+
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetTeacher([FromRoute]Guid id)
+        public async Task<IActionResult> GetStudent([FromRoute] Guid id)
         {
             try
             {
-                var teacher = await _teacherRepository.GetById(id);
+                var teacher = await _studentRepository.GetById(id);
                 return Ok(new ApiResponse
                 {
                     Message = "successful",
@@ -78,13 +80,13 @@ namespace ClassManagement.Api.Controllers
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AddTeacher([FromBody]TeacherRequestDto teacherRequestDto)
+        public async Task<IActionResult> AddStudent([FromBody] StudentRequestDto studentRequestDto)
         {
             try
             {
                 if (!ModelState.IsValid)
                     throw new InvalidOperationException();
-                var checkAge = Utils.IsOver21(teacherRequestDto.DOB);
+                var checkAge = Utils.IsOver22(studentRequestDto.DOB);
                 if (checkAge == false)
                 {
                     return BadRequest(new ApiResponse
@@ -93,8 +95,8 @@ namespace ClassManagement.Api.Controllers
                         Message = "this teacher is underage"
                     });
                 }
-                var newTeacher = CustomMappers.CreateNewTeacher(teacherRequestDto);
-                await _teacherRepository.Add(newTeacher);
+                var newTeacher = CustomMappers.CreateNewStudent(studentRequestDto);
+                await _studentRepository.Add(newTeacher);
 
                 return Ok(new ApiResponse
                 {
