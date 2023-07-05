@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t2i71T9LE1WqfeQawerRslHpewbH1U7fhNUvdKtxwrLCmR4lO3l9B8c9mmsCcoU9HKMiAVfkHVlK1y3HCku3rw==",
+  "dgSpecHash": "Ej1q1F1C1/2r+p3AmRiL/gMPf61hfRL4ZWtFbHUzTb8LnhYrBwoA2evuhiASLfbZ+nSAP4iYExEfZ82Xj4ZOZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\SIMPLEX644\\source\\repos\\ClassMangementApi\\ClassManagement.Tests\\ClassManagement.Tests.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
+    "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.4\\microsoft.entityframeworkcore.inmemory.7.0.4.nupkg.sha512",
     "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\SIMPLEX644\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
