@@ -1,13 +1,17 @@
 ﻿using ClassManagement.Api.Entities;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Xml.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace ClassManagement.Api.Entities
 {
     public class Teacher : BaseEntity
     {
+        [Required]
         public string? Title { get; set; }
+        [Required]
         public Decimal? Salary { get; set; }
+        [Required]
         public string? TeacherNumber { get; set; }
     }
 }

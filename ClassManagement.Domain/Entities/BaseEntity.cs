@@ -4,10 +4,15 @@ namespace ClassManagement.Api.Entities
 {
     public class BaseEntity
     {
+        public BaseEntity()
+        {
+            CreatedAt = DateTime.UtcNow.ToString();
+            this.Id = Guid.NewGuid();
+        }
         [Key]
         public Guid Id { get; set; }
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
+        public string? CreatedAt { get; set; }
+        public string? UpdatedAt { get; set; }
         [Required]
         public string? NIN { get; set; }
         [Required]
@@ -15,6 +20,6 @@ namespace ClassManagement.Api.Entities
         [Required]
         public string? Surname { get; set; }
         [Required]
-        public DateTime? DOB { get; set; }
+        public string? DOB { get; set; }
     }
 }
