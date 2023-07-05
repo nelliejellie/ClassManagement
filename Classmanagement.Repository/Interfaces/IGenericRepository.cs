@@ -10,10 +10,9 @@ namespace Classmanagement.Repository.Interfaces
     public interface IGenericRepository<T>
     {
         Task<T> Add(T entity);
-        Task<bool> Delete(string id);
-        Task<T> Update(string id, JsonPatchDocument patchDocument);
-        Task<T> GetById(string id);
-
-        Task<T> GetAll();
+        Task<bool> Delete(Guid id);
+        Task<T> Update(Guid id, JsonPatchDocument patchDocument);
+        Task<T> GetById(Guid id);
+        Task<IEnumerable<T>> GetAll();
     }
 }

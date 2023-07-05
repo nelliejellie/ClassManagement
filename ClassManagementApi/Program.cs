@@ -18,6 +18,9 @@ namespace ClassManagementApi
 
             // database extension
             builder.AddDbConfig();
+            // repository config
+            builder.AddRepoConfig();
+
 
             var app = builder.Build();
 

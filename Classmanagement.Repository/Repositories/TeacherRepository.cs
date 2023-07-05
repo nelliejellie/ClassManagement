@@ -1,4 +1,5 @@
 ﻿using Classmanagement.Repository.Interfaces;
+using ClassManagement.Api.AppContext;
 using ClassManagement.Api.Entities;
 using Microsoft.AspNetCore.JsonPatch;
 using System;
@@ -9,31 +10,13 @@ using System.Threading.Tasks;
 
 namespace Classmanagement.Repository.Repositories
 {
-    public class TeacherRepository : ITeacherRepository
+    public class TeacherRepository : GenericRepository<Teacher>, ITeacherRepository
     {
-        public Task<Teacher> Add(Teacher entity)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly AppDbContext _context;
 
-        public Task<bool> Delete(string id)
+        public TeacherRepository(AppDbContext context): base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Teacher> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Teacher> GetById(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Teacher> Update(string id, JsonPatchDocument patchDocument)
-        {
-            throw new NotImplementedException();
+            _context = context;
         }
     }
 }
